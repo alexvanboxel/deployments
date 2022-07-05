@@ -1,0 +1,27 @@
+apiVersion: kpt.dev/v1
+kind: Kptfile
+metadata:
+  name: t1
+  annotations:
+    config.kubernetes.io/local-config: "true"
+upstream:
+  type: git
+  git:
+    repo: https://github.com/treactor/treactor-kpt
+    ref: v1
+upstreamLock:
+  type: git
+  git:
+    repo: https://github.com/treactor/treactor-kpt
+    ref: v1
+    commit: 8b5d56449955ba91af871e96c76a42a36b23aca9
+info:
+  description: sample description
+pipeline:
+  mutators:
+  - image: gcr.io/treactor/kpt-fn/create-atoms:unstable
+    configPath: fnconfig_create-atoms.yaml
+  - image: gcr.io/treactor/kpt-fn/ensure-sa:unstable
+  - image: gcr.io/treactor/kpt-fn/ensure-telemetry:unstable
+  - image: gcr.io/treactor/kpt-fn/no-op:unstable
+  - image: gcr.io/treactor/kpt-fn/gateway-to-virtualservice:unstable
