@@ -44,14 +44,6 @@ spec:
           number: 3000
   - match:
     - uri:
-        exact: /treact/nodes/6/info
-    route:
-    - destination:
-        host: treactor
-        port:
-          number: 3000
-  - match:
-    - uri:
         exact: /treact/nodes/1/info
     route:
     - destination:
@@ -69,22 +61,6 @@ spec:
   - match:
     - uri:
         exact: /treact/nodes/3/info
-    route:
-    - destination:
-        host: treactor
-        port:
-          number: 3000
-  - match:
-    - uri:
-        exact: /treact/nodes/7/info
-    route:
-    - destination:
-        host: treactor
-        port:
-          number: 3000
-  - match:
-    - uri:
-        exact: /treact/nodes/8/info
     route:
     - destination:
         host: treactor
