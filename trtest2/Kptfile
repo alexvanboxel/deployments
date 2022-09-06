@@ -4,27 +4,27 @@ metadata: # kpt-merge: /trtest2
   name: trtest2
   annotations:
     config.kubernetes.io/local-config: "true"
-    internal.kpt.dev/upstream-identifier: 'kpt.dev|Kptfile|default|trtest2'
+    internal.kpt.dev/upstream-identifier: kpt.dev|Kptfile|default|trtest2
 upstream:
   type: git
   git:
     repo: https://github.com/treactor/treactor-kpt-blueprints.git
     directory: treactor
-    ref: treactor/v1
+    ref: treactor/v4
 upstreamLock:
   type: git
   git:
     repo: https://github.com/treactor/treactor-kpt-blueprints.git
     directory: treactor
-    ref: treactor/v1
-    commit: 18d0082480b455ab9f06ff043e28f88593e14187
+    ref: treactor/v4
+    commit: 740fa15658dd5b5a4538fb90ac49c409ebb9cae1
 info:
-  description: sample description
+  description: Treactor - The Telemetry Reactor
 pipeline:
   mutators:
   - image: gcr.io/treactor/kpt-fn/create-atoms:unstable
     configPath: fnconfig_create-atoms.yaml
-  - image: gcr.io/treactor/kpt-fn/ensure-sa:unstable
+  - image: gcr.io/treactor/kpt-fn/ensure-sa:v0.3
   - image: gcr.io/treactor/kpt-fn/ensure-telemetry:unstable
   - image: gcr.io/treactor/kpt-fn/no-op:unstable
   - image: gcr.io/treactor/kpt-fn/gateway-to-virtualservice:v0.1
