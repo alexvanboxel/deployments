@@ -1,12 +1,13 @@
 # Generate by gcr.io/treactor/kpt-fn/create-atoms
 apiVersion: gateway.networking.k8s.io/v1alpha2
 kind: HTTPRoute
-metadata:
+metadata: # kpt-merge: default/atom-c
   name: atom-c
   namespace: default
   annotations:
     config.kubernetes.io/managed-by: kpt:fn:gen:gcr.io/treactor/kpt-fn/create-atoms
     config.kubernetes.io/local-config: "true"
+    internal.kpt.dev/upstream-identifier: 'gateway.networking.k8s.io|HTTPRoute|default|atom-c'
 spec:
   parentRefs:
   - name: gateway

@@ -1,11 +1,12 @@
 # Generate by dfdf gcr.io/treactor/kpt-fn/create-atoms
 apiVersion: apps/v1
 kind: Deployment
-metadata:
+metadata: # kpt-merge: default/atom-c
   name: atom-c
   namespace: default
   annotations:
     config.kubernetes.io/managed-by: kpt:fn:gen:gcr.io/treactor/kpt-fn/create-atoms
+    internal.kpt.dev/upstream-identifier: 'apps|Deployment|default|atom-c'
 spec:
   template:
     spec:
