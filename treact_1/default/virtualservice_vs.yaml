@@ -52,6 +52,14 @@ spec:
           number: 3000
   - match:
     - uri:
+        exact: /treact/nodes/3/info
+    route:
+    - destination:
+        host: treactor
+        port:
+          number: 3000
+  - match:
+    - uri:
         exact: /
     route:
     - destination:
