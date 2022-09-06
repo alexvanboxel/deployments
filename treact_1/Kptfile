@@ -4,25 +4,25 @@ metadata: # kpt-merge: /treact_1
   name: treact_1
   annotations:
     config.kubernetes.io/local-config: "true"
-    internal.kpt.dev/upstream-identifier: 'kpt.dev|Kptfile|default|treact_1'
+    internal.kpt.dev/upstream-identifier: kpt.dev|Kptfile|default|treact_1
 upstream:
   type: git
   git:
     repo: https://github.com/treactor/treactor-kpt-blueprints.git
     directory: treactor
-    ref: treactor/v5
+    ref: treactor/v6
 upstreamLock:
   type: git
   git:
     repo: https://github.com/treactor/treactor-kpt-blueprints.git
     directory: treactor
-    ref: treactor/v5
-    commit: 73a4d5af1828f3b44ab66cd18fff0d95f44aa6bf
+    ref: treactor/v6
+    commit: 5850f706801c7ed291cf3edfc3a5d9ae5b06027c
 info:
   description: Treactor - The Telemetry Reactor
 pipeline:
   mutators:
-  - image: gcr.io/treactor/kpt-fn/create-atoms:v0.3
+  - image: gcr.io/treactor/kpt-fn/create-atoms:v0.4
     configPath: fnconfig_create-atoms.yaml
   - image: gcr.io/treactor/kpt-fn/ensure-sa:v0.3
   - image: gcr.io/treactor/kpt-fn/ensure-telemetry:v0.3
