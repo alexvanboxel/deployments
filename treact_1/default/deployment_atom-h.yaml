@@ -5,7 +5,7 @@ metadata: # kpt-merge: default/atom-h
   name: atom-h
   namespace: default
   annotations:
-    config.kubernetes.io/managed-by: kpt:fn:gen:gcr.io/treactor/kpt-fn/create-atoms
+    config.kubernetes.io/managed-by: kms:fn:gen:gcr.io/treactor/kpt-fn/create-atoms
     internal.kpt.dev/upstream-identifier: 'apps|Deployment|default|atom-h'
 spec:
   template:

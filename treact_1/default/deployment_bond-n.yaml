@@ -1,12 +1,11 @@
-# Generate by dfdf gcr.io/treactor/kpt-fn/create-atoms
+# Generate by gcr.io/treactor/kpt-fn/create-atoms
 apiVersion: apps/v1
 kind: Deployment
-metadata: # kpt-merge: default/atom-li
-  name: atom-li
+metadata:
+  name: bond-n
   namespace: default
   annotations:
     config.kubernetes.io/managed-by: kms:fn:gen:gcr.io/treactor/kpt-fn/create-atoms
-    internal.kpt.dev/upstream-identifier: 'apps|Deployment|default|atom-li'
 spec:
   template:
     spec:
@@ -27,17 +26,17 @@ spec:
         - name: TREACTOR_RANDOM
           value: nothing_secret
         - name: SERVICE_NAME
-          value: atom-li
+          value: bond-n
         - name: TREACTOR_NUMBER
-          value: 3
+          value: 299
         - name: TREACTOR_MAX_NUMBER
           value: 3
         - name: TREACTOR_MAX_BOND
           value: 1
         - name: TREACTOR_COMPONENT
-          value: li
+          value: bn
         - name: TREACTOR_MODULE
-          value: atom
+          value: bond
         - name: K8S_POD_NAME
           valueFrom:
             fieldRef:
@@ -66,8 +65,8 @@ spec:
           protocol: TCP
     metadata:
       labels:
-        app: atom-li
+        app: bond-n
   selector:
     matchLabels:
-      app: atom-li
-  serviceAccountName: atom-li
+      app: bond-n
+  serviceAccountName: bond-n

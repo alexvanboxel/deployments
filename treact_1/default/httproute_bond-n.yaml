@@ -1,13 +1,12 @@
 # Generate by gcr.io/treactor/kpt-fn/create-atoms
 apiVersion: gateway.networking.k8s.io/v1alpha2
 kind: HTTPRoute
-metadata: # kpt-merge: default/atom-h
-  name: atom-h
+metadata:
+  name: bond-n
   namespace: default
   annotations:
     config.kubernetes.io/managed-by: kms:fn:gen:gcr.io/treactor/kpt-fn/create-atoms
     config.kubernetes.io/local-config: "true"
-    internal.kpt.dev/upstream-identifier: 'gateway.networking.k8s.io|HTTPRoute|default|atom-h'
 spec:
   parentRefs:
   - name: gateway
@@ -15,8 +14,8 @@ spec:
   hostnames: ["treactor.example.com"]
   rules:
   - backendRefs:
-    - name: atom-h
+    - name: bond-n
       port: 3000
     matches:
     - path:
-        value: /treact/nodes/1/info
+        value: /treact/nodes/299/info
