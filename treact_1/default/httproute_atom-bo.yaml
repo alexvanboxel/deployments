@@ -2,7 +2,7 @@
 apiVersion: gateway.networking.k8s.io/v1alpha2
 kind: HTTPRoute
 metadata:
-  name: atom-be
+  name: atom-bo
   namespace: default
   annotations:
     config.kubernetes.io/managed-by: kpt:fn:gen:gcr.io/treactor/kpt-fn/create-atoms
@@ -14,8 +14,8 @@ spec:
   hostnames: ["treactor.example.com"]
   rules:
   - backendRefs:
-    - name: atom-be
+    - name: atom-bo
       port: 3000
     matches:
     - path:
-        value: /treact/nodes/4/info
+        value: /treact/nodes/201/info
