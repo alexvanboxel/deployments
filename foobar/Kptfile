@@ -1,0 +1,22 @@
+apiVersion: kpt.dev/v1
+kind: Kptfile
+metadata: # kpt-merge: /foobar
+  name: foobar
+  annotations:
+    config.kubernetes.io/local-config: "true"
+    internal.kpt.dev/upstream-identifier: 'kpt.dev|Kptfile|default|foobar'
+upstream:
+  type: git
+  git:
+    repo: https://github.com/treactor/treactor-kpt-blueprints.git
+    directory: meetup_1
+    ref: meetup_1/v1
+upstreamLock:
+  type: git
+  git:
+    repo: https://github.com/treactor/treactor-kpt-blueprints.git
+    directory: meetup_1
+    ref: meetup_1/v1
+    commit: fd9c99458dc6fd5be83973380897a4e4edc62c86
+info:
+  description: Meetup 1
