@@ -2,7 +2,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: treactor-ui
+  name: atom-he
   namespace: default
   annotations:
     config.kubernetes.io/managed-by: kms:fn:gen:gcr.io/treactor/kpt-fn/create-atoms
@@ -26,17 +26,17 @@ spec:
         - name: TREACTOR_RANDOM
           value: nothing_secret
         - name: SERVICE_NAME
-          value: treactor-ui
+          value: atom-he
         - name: TREACTOR_NUMBER
-          value: 500
+          value: 2
         - name: TREACTOR_MAX_NUMBER
           value: 2
         - name: TREACTOR_MAX_BOND
           value: 1
         - name: TREACTOR_COMPONENT
-          value: ui
+          value: he
         - name: TREACTOR_MODULE
-          value: treactor
+          value: atom
         - name: K8S_POD_NAME
           valueFrom:
             fieldRef:
@@ -65,8 +65,8 @@ spec:
           protocol: TCP
     metadata:
       labels:
-        app: treactor-ui
+        app: atom-he
   selector:
     matchLabels:
-      app: treactor-ui
-  serviceAccountName: treactor-ui
+      app: atom-he
+  serviceAccountName: atom-he
