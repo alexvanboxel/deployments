@@ -1,0 +1,21 @@
+# Generate by gcr.io/treactor/kpt-fn/create-atoms
+apiVersion: gateway.networking.k8s.io/v1alpha2
+kind: HTTPRoute
+metadata:
+  name: bond-n
+  namespace: default
+  annotations:
+    config.kubernetes.io/managed-by: kms:fn:gen:gcr.io/treactor/kpt-fn/create-atoms
+    config.kubernetes.io/local-config: "true"
+spec:
+  parentRefs:
+  - name: gateway
+    namespace: default
+  hostnames: ["treactor.example.com"]
+  rules:
+  - backendRefs:
+    - name: bond-n
+      port: 3000
+    matches:
+    - path:
+        value: /treact/nodes/299/info

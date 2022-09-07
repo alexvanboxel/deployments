@@ -6,6 +6,7 @@ metadata: # kpt-merge: default/treactor-ui
   namespace: default
   annotations:
     internal.kpt.dev/upstream-identifier: 'gateway.networking.k8s.io|HTTPRoute|default|treactor-ui'
+    config.kubernetes.io/local-config: "true"
 spec:
   parentRefs:
   - name: gateway
