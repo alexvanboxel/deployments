@@ -4,19 +4,19 @@ metadata: # kpt-merge: /belgium
   name: belgium
   annotations:
     config.kubernetes.io/local-config: "true"
-    internal.kpt.dev/upstream-identifier: 'kpt.dev|Kptfile|default|belgium'
+    internal.kpt.dev/upstream-identifier: kpt.dev|Kptfile|default|belgium
 upstream:
   type: git
   git:
     repo: https://github.com/treactor/treactor-kpt-blueprints.git
     directory: azure
-    ref: azure/v1
+    ref: azure/v2
 upstreamLock:
   type: git
   git:
     repo: https://github.com/treactor/treactor-kpt-blueprints.git
     directory: azure
-    ref: azure/v1
-    commit: f39559897066ee1d049944bd9f32dd52531d708a
+    ref: azure/v2
+    commit: 7ea547a8b5f7a2da2963ee4e9ae53bd4703b4926
 info:
   description: Something from MS
