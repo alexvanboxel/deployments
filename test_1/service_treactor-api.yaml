@@ -14,3 +14,20 @@ spec:
     targetPort: 30000
   selector:
     app: treactor-api
+---
+# Generate by gcr.io/treactor/kpt-fn/create-atoms
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: treactor-api
+  name: treactor-api
+  namespace: default
+spec:
+  ports:
+  - name: http
+    port: 80
+    protocol: TCP
+    targetPort: 30000
+  selector:
+    app: treactor-api

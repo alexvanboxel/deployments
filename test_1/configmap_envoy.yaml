@@ -60,18 +60,18 @@ data:
                               },
                               {
                                 "match": {
-                                  "prefix": "/treact/nodes/299/info"
-                                },
-                                "route": {
-                                  "cluster": "bond_n_80"
-                                }
-                              },
-                              {
-                                "match": {
                                   "prefix": "/treact/nodes/501/info"
                                 },
                                 "route": {
                                   "cluster": "treactor_api_80"
+                                }
+                              },
+                              {
+                                "match": {
+                                  "prefix": "/treact/nodes/299/info"
+                                },
+                                "route": {
+                                  "cluster": "bond_n_80"
                                 }
                               },
                               {
@@ -84,26 +84,10 @@ data:
                               },
                               {
                                 "match": {
-                                  "prefix": "/treact/nodes/3/info"
-                                },
-                                "route": {
-                                  "cluster": "atom_li_80"
-                                }
-                              },
-                              {
-                                "match": {
                                   "prefix": "/treact/nodes/1/info"
                                 },
                                 "route": {
                                   "cluster": "atom_h_80"
-                                }
-                              },
-                              {
-                                "match": {
-                                  "prefix": "/treact/nodes/2/info"
-                                },
-                                "route": {
-                                  "cluster": "atom_he_80"
                                 }
                               },
                               {
@@ -151,30 +135,6 @@ data:
         ],
         "clusters": [
           {
-            "name": "treactor_ui_80",
-            "type": "STRICT_DNS",
-            "connect_timeout": "0.250s",
-            "load_assignment": {
-              "cluster_name": "treactor_ui_80",
-              "endpoints": [
-                {
-                  "lb_endpoints": [
-                    {
-                      "endpoint": {
-                        "address": {
-                          "socket_address": {
-                            "address": "treactor-ui",
-                            "port_value": 80
-                          }
-                        }
-                      }
-                    }
-                  ]
-                }
-              ]
-            }
-          },
-          {
             "name": "atom_h_80",
             "type": "STRICT_DNS",
             "connect_timeout": "0.250s",
@@ -188,54 +148,6 @@ data:
                         "address": {
                           "socket_address": {
                             "address": "atom-h",
-                            "port_value": 80
-                          }
-                        }
-                      }
-                    }
-                  ]
-                }
-              ]
-            }
-          },
-          {
-            "name": "atom_he_80",
-            "type": "STRICT_DNS",
-            "connect_timeout": "0.250s",
-            "load_assignment": {
-              "cluster_name": "atom_he_80",
-              "endpoints": [
-                {
-                  "lb_endpoints": [
-                    {
-                      "endpoint": {
-                        "address": {
-                          "socket_address": {
-                            "address": "atom-he",
-                            "port_value": 80
-                          }
-                        }
-                      }
-                    }
-                  ]
-                }
-              ]
-            }
-          },
-          {
-            "name": "atom_li_80",
-            "type": "STRICT_DNS",
-            "connect_timeout": "0.250s",
-            "load_assignment": {
-              "cluster_name": "atom_li_80",
-              "endpoints": [
-                {
-                  "lb_endpoints": [
-                    {
-                      "endpoint": {
-                        "address": {
-                          "socket_address": {
-                            "address": "atom-li",
                             "port_value": 80
                           }
                         }
@@ -284,6 +196,30 @@ data:
                         "address": {
                           "socket_address": {
                             "address": "treactor-api",
+                            "port_value": 80
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "treactor_ui_80",
+            "type": "STRICT_DNS",
+            "connect_timeout": "0.250s",
+            "load_assignment": {
+              "cluster_name": "treactor_ui_80",
+              "endpoints": [
+                {
+                  "lb_endpoints": [
+                    {
+                      "endpoint": {
+                        "address": {
+                          "socket_address": {
+                            "address": "treactor-ui",
                             "port_value": 80
                           }
                         }
