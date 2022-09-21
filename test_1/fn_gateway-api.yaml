@@ -1,0 +1,8 @@
+apiVersion: fn.kpt.dev/v1alpha1
+kind: treactor/GatewayAPI
+metadata: # kpt-merge: /gateway-api
+  name: gateway-api
+  annotations:
+    config.kubernetes.io/local-config: "true"
+    internal.kpt.dev/upstream-identifier: 'fn.kpt.dev|treactor/GatewayAPI|default|gateway-api'
+output: envoy
