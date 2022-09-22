@@ -44,7 +44,7 @@ data:
                               },
                               {
                                 "match": {
-                                  "path": "/robot.txt"
+                                  "prefix": "/treact/nodes/500/info"
                                 },
                                 "route": {
                                   "cluster": "treactor_ui_80"
@@ -68,10 +68,10 @@ data:
                               },
                               {
                                 "match": {
-                                  "prefix": "/treact/nodes/500/info"
+                                  "prefix": "/treact/nodes/2/info"
                                 },
                                 "route": {
-                                  "cluster": "treactor_ui_80"
+                                  "cluster": "atom_he_80"
                                 }
                               },
                               {
@@ -85,6 +85,14 @@ data:
                               {
                                 "match": {
                                   "prefix": "/treact/reactions"
+                                },
+                                "route": {
+                                  "cluster": "treactor_ui_80"
+                                }
+                              },
+                              {
+                                "match": {
+                                  "path": "/robot.txt"
                                 },
                                 "route": {
                                   "cluster": "treactor_ui_80"
@@ -135,30 +143,6 @@ data:
         ],
         "clusters": [
           {
-            "name": "treactor_ui_80",
-            "type": "STRICT_DNS",
-            "connect_timeout": "0.250s",
-            "load_assignment": {
-              "cluster_name": "treactor_ui_80",
-              "endpoints": [
-                {
-                  "lb_endpoints": [
-                    {
-                      "endpoint": {
-                        "address": {
-                          "socket_address": {
-                            "address": "treactor-ui",
-                            "port_value": 80
-                          }
-                        }
-                      }
-                    }
-                  ]
-                }
-              ]
-            }
-          },
-          {
             "name": "atom_h_80",
             "type": "STRICT_DNS",
             "connect_timeout": "0.250s",
@@ -172,6 +156,30 @@ data:
                         "address": {
                           "socket_address": {
                             "address": "atom-h",
+                            "port_value": 80
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "atom_he_80",
+            "type": "STRICT_DNS",
+            "connect_timeout": "0.250s",
+            "load_assignment": {
+              "cluster_name": "atom_he_80",
+              "endpoints": [
+                {
+                  "lb_endpoints": [
+                    {
+                      "endpoint": {
+                        "address": {
+                          "socket_address": {
+                            "address": "atom-he",
                             "port_value": 80
                           }
                         }
@@ -220,6 +228,30 @@ data:
                         "address": {
                           "socket_address": {
                             "address": "treactor-api",
+                            "port_value": 80
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "treactor_ui_80",
+            "type": "STRICT_DNS",
+            "connect_timeout": "0.250s",
+            "load_assignment": {
+              "cluster_name": "treactor_ui_80",
+              "endpoints": [
+                {
+                  "lb_endpoints": [
+                    {
+                      "endpoint": {
+                        "address": {
+                          "socket_address": {
+                            "address": "treactor-ui",
                             "port_value": 80
                           }
                         }
