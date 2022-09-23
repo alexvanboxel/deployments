@@ -16,7 +16,7 @@ frameworks:
   imageTag: "0.1.7"
 - name: "treactorNode"
   image: "gcr.io/treactor/treactor-node"
-  imageTag: "0.1.18"
+  imageTag: "0.1.17"
 numbers:
 - number: 500
   framework: "treactorNode"
