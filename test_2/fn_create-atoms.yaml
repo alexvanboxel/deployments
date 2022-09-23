@@ -1,0 +1,33 @@
+apiVersion: fn.treactor.io/v1alpha1
+kind: CreateAtoms
+metadata: # kpt-merge: /create-atoms
+  name: create-atoms
+  annotations:
+    config.kubernetes.io/local-config: "true"
+    internal.kpt.dev/upstream-identifier: 'fn.treactor.io|CreateAtoms|default|create-atoms'
+maxBond: 0
+maxNumber: 3
+frameworks:
+- name: "treactorGo"
+  image: "gcr.io/treactor/treactor-go"
+  imageTag: "0.1.9"
+- name: "treactorJava"
+  image: "gcr.io/treactor/treactor-java"
+  imageTag: "0.1.7"
+- name: "treactorNode"
+  image: "gcr.io/treactor/treactor-node"
+  imageTag: "0.1.18"
+numbers:
+- number: 500
+  framework: "treactorNode"
+- number: 501
+  framework: "treactorGo"
+- number: 299
+  framework: "treactorGo"
+- number: 2
+  framework: "treactorNode"
+- number: 3
+  framework: "treactorJava"
+groups:
+- group: 1
+  framework: "treactorGo"
