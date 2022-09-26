@@ -94,6 +94,14 @@ data:
                               },
                               {
                                 "match":  {
+                                  "prefix":  "/treact/nodes/2/info"
+                                },
+                                "route":  {
+                                  "cluster":  "atom_he_80"
+                                }
+                              },
+                              {
+                                "match":  {
                                   "prefix":  "/treact/reactions"
                                 },
                                 "route":  {
@@ -150,6 +158,30 @@ data:
                         "address":  {
                           "socket_address":  {
                             "address":  "atom-h",
+                            "port_value":  80
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name":  "atom_he_80",
+            "type":  "STRICT_DNS",
+            "connect_timeout":  "0.250s",
+            "load_assignment":  {
+              "cluster_name":  "atom_he_80",
+              "endpoints":  [
+                {
+                  "lb_endpoints":  [
+                    {
+                      "endpoint":  {
+                        "address":  {
+                          "socket_address":  {
+                            "address":  "atom-he",
                             "port_value":  80
                           }
                         }
