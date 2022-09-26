@@ -1,0 +1,9 @@
+apiVersion: argocd.kpt.dev/v1alpha1
+kind: KptArgoRepo
+metadata:
+  name: deployments
+  annotations:
+    config.kubernetes.io/local-config: "true"
+repoUrl: https://github.com/alexvanboxel/deployments.git
+namePrefix: deployments-
+
