@@ -4,7 +4,9 @@ metadata: # kpt-merge: /test_2
   name: test_2
   annotations:
     config.kubernetes.io/local-config: "true"
-    internal.kpt.dev/upstream-identifier: 'kpt.dev|Kptfile|default|test_2'
+    internal.kpt.dev/upstream-identifier: kpt.dev|Kptfile|default|test_2
+    kpt-repo.argocd.kpt.dev/destination-name: "in-cluster"
+    kpt-repo.argocd.kpt.dev/project-name: "default"
 upstream:
   type: git
   git:
