@@ -1,0 +1,19 @@
+# Generate by gcr.io/treactor/kpt-fn/gateway-api
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: treactor
+  annotations:
+    config.kubernetes.io/managed-by: fn:gen:gcr.io/treactor/kpt-fn/gateway-api
+  namespace: default
+spec:
+  rules:
+  - http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: envoy
+            port:
+              number: 30000
