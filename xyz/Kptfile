@@ -12,14 +12,14 @@ upstream:
   git:
     repo: https://github.com/treactor/treactor-kpt-blueprints.git
     directory: treactor
-    ref: treactor/v2
+    ref: treactor/v3
 upstreamLock:
   type: git
   git:
     repo: https://github.com/treactor/treactor-kpt-blueprints.git
     directory: treactor
-    ref: treactor/v2
-    commit: 73bcb22bc494ade9c6a986ad7ce47b5ef9ed4e27
+    ref: treactor/v3
+    commit: f8e5c90d80f65c7fa395a9d094aa77d1784bb1c0
 info:
   description: Treactor - The Telemetry Reactor
 pipeline:
