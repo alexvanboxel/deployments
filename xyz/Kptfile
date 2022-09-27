@@ -4,20 +4,22 @@ metadata: # kpt-merge: /xyz
   name: xyz
   annotations:
     config.kubernetes.io/local-config: "true"
-    internal.kpt.dev/upstream-identifier: 'kpt.dev|Kptfile|default|xyz'
+    internal.kpt.dev/upstream-identifier: kpt.dev|Kptfile|default|xyz
+    kpt-repo.argocd.kpt.dev/destination-name: in-cluster
+    kpt-repo.argocd.kpt.dev/project-name: default
 upstream:
   type: git
   git:
     repo: https://github.com/treactor/treactor-kpt-blueprints.git
     directory: treactor
-    ref: treactor/v1
+    ref: treactor/v2
 upstreamLock:
   type: git
   git:
     repo: https://github.com/treactor/treactor-kpt-blueprints.git
     directory: treactor
-    ref: treactor/v1
-    commit: dba71e4213e871440111b77d059e77ee69b940af
+    ref: treactor/v2
+    commit: 73bcb22bc494ade9c6a986ad7ce47b5ef9ed4e27
 info:
   description: Treactor - The Telemetry Reactor
 pipeline:

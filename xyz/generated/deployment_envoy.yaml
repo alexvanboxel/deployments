@@ -1,11 +1,12 @@
 # Generate by gcr.io/treactor/kpt-fn/gateway-api
 apiVersion: apps/v1
 kind: Deployment
-metadata:
+metadata: # kpt-merge: xyz/envoy
   name: envoy
   namespace: xyz
   annotations:
     config.kubernetes.io/managed-by: fn:gen:gcr.io/treactor/kpt-fn/gateway-api
+    internal.kpt.dev/upstream-identifier: 'apps|Deployment|xyz|envoy'
 spec:
   template:
     spec:
