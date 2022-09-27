@@ -1,12 +1,11 @@
 # Generate by gcr.io/treactor/kpt-fn/create-atoms
 apiVersion: apps/v1
 kind: Deployment
-metadata: # kpt-merge: xyz/bond-n
+metadata:
   name: bond-n
   namespace: xyz
   annotations:
     config.kubernetes.io/managed-by: fn:gen:gcr.io/treactor/kpt-fn/create-atoms
-    internal.kpt.dev/upstream-identifier: 'apps|Deployment|xyz|bond-n'
 spec:
   template:
     spec:
