@@ -2,7 +2,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: treactor-api
+  name: atom-li
   namespace: kevin
   annotations:
     config.kubernetes.io/managed-by: fn:gen:gcr.io/treactor/kpt-fn/create-atoms
@@ -11,12 +11,12 @@ spec:
     spec:
       containers:
       - name: atom
-        image: gcr.io/treactor/treactor-go:0.1.9
+        image: gcr.io/treactor/treactor-java:0.1.7
         env:
         - name: PORT
           value: "30000"
         - name: SERVICE_VERSION
-          value: 0.1.9
+          value: 0.1.7
         - name: TREACTOR_MODE
           value: cluster
         - name: TREACTOR_TRACE_PROPAGATION
@@ -26,17 +26,17 @@ spec:
         - name: TREACTOR_RANDOM
           value: nothing_secret
         - name: SERVICE_NAME
-          value: treactor-api
+          value: atom-li
         - name: TREACTOR_NUMBER
-          value: "501"
+          value: "3"
         - name: TREACTOR_MAX_NUMBER
           value: "3"
         - name: TREACTOR_MAX_BOND
           value: "0"
         - name: TREACTOR_COMPONENT
-          value: ai
+          value: li
         - name: TREACTOR_MODULE
-          value: treactor
+          value: atom
         - name: K8S_POD_NAME
           valueFrom:
             fieldRef:
@@ -63,10 +63,10 @@ spec:
         - containerPort: 30000
           name: http
           protocol: TCP
-      serviceAccountName: treactor-api
+      serviceAccountName: atom-li
     metadata:
       labels:
-        app: treactor-api
+        app: atom-li
   selector:
     matchLabels:
-      app: treactor-api
+      app: atom-li
