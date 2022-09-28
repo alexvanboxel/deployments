@@ -6,3 +6,5 @@ metadata: # kpt-merge: /gateway-api
     config.kubernetes.io/local-config: "true"
     internal.kpt.dev/upstream-identifier: 'fn.treactor.io|GatewayAPI|default|gateway-api'
 output: envoy
+envoy:
+  enableIngress: true
