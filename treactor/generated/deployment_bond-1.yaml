@@ -2,7 +2,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: treactor-api
+  name: bond-1
   namespace: treactor
   annotations:
     config.kubernetes.io/managed-by: fn:gen:gcr.io/treactor/kpt-fn/create-atoms
@@ -26,17 +26,17 @@ spec:
         - name: TREACTOR_RANDOM
           value: nothing_secret
         - name: SERVICE_NAME
-          value: treactor-api
+          value: bond-1
         - name: TREACTOR_NUMBER
-          value: "501"
+          value: "201"
         - name: TREACTOR_MAX_NUMBER
           value: "3"
         - name: TREACTOR_MAX_BOND
           value: "1"
         - name: TREACTOR_COMPONENT
-          value: ai
+          value: bo
         - name: TREACTOR_MODULE
-          value: treactor
+          value: bond
         - name: K8S_POD_NAME
           valueFrom:
             fieldRef:
@@ -63,10 +63,10 @@ spec:
         - containerPort: 30000
           name: http
           protocol: TCP
-      serviceAccountName: treactor-api
+      serviceAccountName: bond-1
     metadata:
       labels:
-        app: treactor-api
+        app: bond-1
   selector:
     matchLabels:
-      app: treactor-api
+      app: bond-1

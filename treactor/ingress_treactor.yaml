@@ -33,6 +33,13 @@ spec:
         pathType: Exact
       - backend:
           service:
+            name: bond-1
+            port:
+              number: 80
+        path: /treact/nodes/201/info
+        pathType: Prefix
+      - backend:
+          service:
             name: bond-n
             port:
               number: 80
@@ -51,6 +58,27 @@ spec:
             port:
               number: 80
         path: /treact/nodes/501/info
+        pathType: Prefix
+      - backend:
+          service:
+            name: atom-h
+            port:
+              number: 80
+        path: /treact/nodes/1/info
+        pathType: Prefix
+      - backend:
+          service:
+            name: atom-he
+            port:
+              number: 80
+        path: /treact/nodes/2/info
+        pathType: Prefix
+      - backend:
+          service:
+            name: atom-li
+            port:
+              number: 80
+        path: /treact/nodes/3/info
         pathType: Prefix
       - backend:
           service:
