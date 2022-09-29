@@ -1,23 +1,22 @@
 # Generate by gcr.io/treactor/kpt-fn/create-atoms
 apiVersion: apps/v1
 kind: Deployment
-metadata: # kpt-merge: treactor/atom-li
+metadata:
   name: atom-li
   namespace: treactor
   annotations:
     config.kubernetes.io/managed-by: fn:gen:gcr.io/treactor/kpt-fn/create-atoms
-    internal.kpt.dev/upstream-identifier: 'apps|Deployment|treactor|atom-li'
 spec:
   template:
     spec:
       containers:
       - name: atom
-        image: gcr.io/treactor/treactor-java:0.1.7
+        image: gcr.io/treactor/treactor-java:0.1.8
         env:
         - name: PORT
           value: "30000"
         - name: SERVICE_VERSION
-          value: 0.1.7
+          value: 0.1.8
         - name: TREACTOR_MODE
           value: cluster
         - name: TREACTOR_TRACE_PROPAGATION
@@ -64,6 +63,10 @@ spec:
         - containerPort: 30000
           name: http
           protocol: TCP
+        readinessProbe:
+          httpGet:
+            path: /healthz
+            port: http
       serviceAccountName: atom-li
     metadata:
       labels:
