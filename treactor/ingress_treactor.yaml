@@ -1,10 +1,11 @@
 # Generate by gcr.io/treactor/kpt-fn/gateway-api
 apiVersion: networking.k8s.io/v1
 kind: Ingress
-metadata:
+metadata: # kpt-merge: treactor/treactor
   name: treactor
   annotations:
     config.kubernetes.io/managed-by: fn:gen:gcr.io/treactor/kpt-fn/gateway-api
+    internal.kpt.dev/upstream-identifier: 'networking.k8s.io|Ingress|treactor|treactor'
   namespace: treactor
 spec:
   rules:

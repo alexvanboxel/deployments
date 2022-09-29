@@ -5,18 +5,18 @@ metadata: # kpt-merge: /create-atoms
   annotations:
     config.kubernetes.io/local-config: "true"
     internal.kpt.dev/upstream-identifier: 'fn.treactor.io|CreateAtoms|default|create-atoms'
-maxBond: 1
-maxNumber: 3
+maxBond: 0
+maxNumber: 0
 frameworks:
 - name: "treactorGo"
   image: "gcr.io/treactor/treactor-go"
-  imageTag: "0.1.9"
+  imageTag: "0.1.10"
 - name: "treactorJava"
   image: "gcr.io/treactor/treactor-java"
-  imageTag: "0.1.7"
+  imageTag: "0.1.8"
 - name: "treactorNode"
   image: "gcr.io/treactor/treactor-node"
-  imageTag: "0.1.18"
+  imageTag: "0.1.19"
 numbers:
 - number: 500
   framework: "treactorNode"

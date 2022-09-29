@@ -1,13 +1,14 @@
 # Generate by gcr.io/treactor/kpt-fn/create-atoms
 apiVersion: v1
 kind: Service
-metadata:
+metadata: # kpt-merge: treactor/atom-h
   labels:
     app: atom-h
   name: atom-h
   namespace: treactor
   annotations:
     config.kubernetes.io/managed-by: fn:gen:gcr.io/treactor/kpt-fn/create-atoms
+    internal.kpt.dev/upstream-identifier: '|Service|treactor|atom-h'
 spec:
   ports:
   - name: http
