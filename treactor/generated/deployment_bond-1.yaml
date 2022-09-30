@@ -30,7 +30,7 @@ spec:
         - name: TREACTOR_NUMBER
           value: "201"
         - name: TREACTOR_MAX_NUMBER
-          value: "5"
+          value: "118"
         - name: TREACTOR_MAX_BOND
           value: "2"
         - name: TREACTOR_COMPONENT

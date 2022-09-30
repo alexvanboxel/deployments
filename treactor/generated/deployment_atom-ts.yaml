@@ -1,0 +1,76 @@
+# Generate by gcr.io/treactor/kpt-fn/create-atoms
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: atom-ts
+  namespace: treactor
+  annotations:
+    config.kubernetes.io/managed-by: fn:gen:gcr.io/treactor/kpt-fn/create-atoms
+spec:
+  template:
+    spec:
+      containers:
+      - name: atom
+        image: gcr.io/treactor/treactor-go:0.1.10
+        env:
+        - name: PORT
+          value: "30000"
+        - name: SERVICE_VERSION
+          value: 0.1.10
+        - name: TREACTOR_MODE
+          value: cluster
+        - name: TREACTOR_TRACE_PROPAGATION
+          value: w3c
+        - name: TREACTOR_TRACE_INTERNAL
+          value: "1"
+        - name: TREACTOR_RANDOM
+          value: nothing_secret
+        - name: SERVICE_NAME
+          value: atom-ts
+        - name: TREACTOR_NUMBER
+          value: "117"
+        - name: TREACTOR_MAX_NUMBER
+          value: "118"
+        - name: TREACTOR_MAX_BOND
+          value: "2"
+        - name: TREACTOR_COMPONENT
+          value: ts
+        - name: TREACTOR_MODULE
+          value: atom
+        - name: K8S_POD_NAME
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.name
+        - name: K8S_NAMESPACE_NAME
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.namespace
+        - name: K8S_POD_UID
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.uid
+        - name: HOST_IP
+          valueFrom:
+            fieldRef:
+              fieldPath: status.hostIP
+        - name: OTEL_EXPORTER
+          value: otlp
+        - name: OTEL_EXPORTER_OTLP_ENDPOINT
+          value: http://$(HOST_IP):4317
+        - name: OTEL_EXPORTER_OTLP_PROTOCOL
+          value: grpc
+        ports:
+        - containerPort: 30000
+          name: http
+          protocol: TCP
+        readinessProbe:
+          httpGet:
+            path: /healthz
+            port: http
+      serviceAccountName: atom-ts
+    metadata:
+      labels:
+        app: atom-ts
+  selector:
+    matchLabels:
+      app: atom-ts
