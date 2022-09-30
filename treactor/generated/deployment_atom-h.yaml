@@ -2,7 +2,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: treactor-api
+  name: atom-h
   namespace: treactor
   annotations:
     config.kubernetes.io/managed-by: fn:gen:gcr.io/treactor/kpt-fn/create-atoms
@@ -26,17 +26,17 @@ spec:
         - name: TREACTOR_RANDOM
           value: nothing_secret
         - name: SERVICE_NAME
-          value: treactor-api
+          value: atom-h
         - name: TREACTOR_NUMBER
-          value: "501"
+          value: "1"
         - name: TREACTOR_MAX_NUMBER
           value: "3"
         - name: TREACTOR_MAX_BOND
           value: "1"
         - name: TREACTOR_COMPONENT
-          value: ai
+          value: h
         - name: TREACTOR_MODULE
-          value: treactor
+          value: atom
         - name: K8S_POD_NAME
           valueFrom:
             fieldRef:
@@ -67,10 +67,10 @@ spec:
           httpGet:
             path: /healthz
             port: http
-      serviceAccountName: treactor-api
+      serviceAccountName: atom-h
     metadata:
       labels:
-        app: treactor-api
+        app: atom-h
   selector:
     matchLabels:
-      app: treactor-api
+      app: atom-h
