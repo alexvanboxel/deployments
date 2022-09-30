@@ -4,31 +4,31 @@ metadata: # kpt-merge: /treactor
   name: treactor
   annotations:
     config.kubernetes.io/local-config: "true"
-    internal.kpt.dev/upstream-identifier: kpt.dev|Kptfile|default|treactor
     kpt-repo.argocd.kpt.dev/destination-name: in-cluster
     kpt-repo.argocd.kpt.dev/project-name: default
+    internal.kpt.dev/upstream-identifier: 'kpt.dev|Kptfile|default|treactor'
 upstream:
   type: git
   git:
     repo: https://github.com/treactor/treactor-kpt-blueprints.git
     directory: treactor
-    ref: treactor/v5
+    ref: treactor/v4
 upstreamLock:
   type: git
   git:
     repo: https://github.com/treactor/treactor-kpt-blueprints.git
     directory: treactor
-    ref: treactor/v5
-    commit: 2fd0646e8f6ad224de62c55c9892e98f28bbf505
+    ref: treactor/v4
+    commit: d7bed5f3848dee569661ffe35b307a3eed9eaecf
 info:
   description: Treactor - The Telemetry Reactor
 pipeline:
   mutators:
-  - image: gcr.io/treactor/kpt-fn/create-atoms:v0.9
+  - image: gcr.io/treactor/kpt-fn/create-atoms:v0.8
     configPath: fn_create-atoms.yaml
-  - image: gcr.io/treactor/kpt-fn/gateway-api:v0.9
+  - image: gcr.io/treactor/kpt-fn/gateway-api:v0.8
     configPath: fn_gateway-api.yaml
-  - image: gcr.io/treactor/kpt-fn/ensure-sa:v0.9
-  - image: gcr.io/treactor/kpt-fn/ensure-telemetry:v0.9
+  - image: gcr.io/treactor/kpt-fn/ensure-sa:v0.8
+  - image: gcr.io/treactor/kpt-fn/ensure-telemetry:v0.8
   - image: gcr.io/kpt-fn/set-namespace:v0.4.1
     configPath: package-context.yaml
