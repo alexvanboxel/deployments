@@ -1,11 +1,12 @@
 # Generate by gcr.io/treactor/kpt-fn/gateway-api
 apiVersion: v1
 kind: ConfigMap
-metadata:
+metadata: # kpt-merge: foo/envoy
   name: envoy
   namespace: foo
   annotations:
     config.kubernetes.io/managed-by: fn:gen:gcr.io/treactor/kpt-fn/gateway-api
+    internal.kpt.dev/upstream-identifier: '|ConfigMap|foo|envoy'
 data:
   envoy.yaml: |-
     {
