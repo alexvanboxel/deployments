@@ -16,4 +16,4 @@ spec:
       name: http
       protocol: HTTP
     hosts:
-    - "foo.demo.treactor.io"
+    - foo.demo.treactor.io
