@@ -2,7 +2,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: treactor-ui
+  name: atom-ne
   namespace: foo
   annotations:
     config.kubernetes.io/managed-by: fn:gen:gcr.io/treactor/kpt-fn/create-atoms
@@ -11,12 +11,12 @@ spec:
     spec:
       containers:
       - name: atom
-        image: gcr.io/treactor/treactor-node:0.1.19
+        image: gcr.io/treactor/treactor-java:0.1.8
         env:
         - name: PORT
           value: "30000"
         - name: SERVICE_VERSION
-          value: 0.1.19
+          value: 0.1.8
         - name: TREACTOR_MODE
           value: cluster
         - name: TREACTOR_TRACE_PROPAGATION
@@ -26,17 +26,17 @@ spec:
         - name: TREACTOR_RANDOM
           value: nothing_secret
         - name: SERVICE_NAME
-          value: treactor-ui
+          value: atom-ne
         - name: TREACTOR_NUMBER
-          value: "500"
+          value: "10"
         - name: TREACTOR_MAX_NUMBER
           value: "12"
         - name: TREACTOR_MAX_BOND
           value: "1"
         - name: TREACTOR_COMPONENT
-          value: ui
+          value: ne
         - name: TREACTOR_MODULE
-          value: treactor
+          value: atom
         - name: K8S_POD_NAME
           valueFrom:
             fieldRef:
@@ -67,10 +67,10 @@ spec:
           httpGet:
             path: /healthz
             port: http
-      serviceAccountName: treactor-ui
+      serviceAccountName: atom-ne
     metadata:
       labels:
-        app: treactor-ui
+        app: atom-ne
   selector:
     matchLabels:
-      app: treactor-ui
+      app: atom-ne
