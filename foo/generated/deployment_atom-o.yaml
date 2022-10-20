@@ -11,12 +11,12 @@ spec:
     spec:
       containers:
       - name: atom
-        image: gcr.io/treactor/treactor-go:0.1.10
+        image: gcr.io/treactor/treactor-node:0.1.19
         env:
         - name: PORT
           value: "30000"
         - name: SERVICE_VERSION
-          value: 0.1.10
+          value: 0.1.19
         - name: TREACTOR_MODE
           value: cluster
         - name: TREACTOR_TRACE_PROPAGATION
@@ -32,7 +32,7 @@ spec:
         - name: TREACTOR_MAX_NUMBER
           value: "8"
         - name: TREACTOR_MAX_BOND
-          value: "0"
+          value: "1"
         - name: TREACTOR_COMPONENT
           value: o
         - name: TREACTOR_MODULE
