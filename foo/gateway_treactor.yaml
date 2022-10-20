@@ -5,14 +5,13 @@ metadata: # kpt-merge: /gateway
   name: gateway
   annotations:
     internal.kpt.dev/upstream-identifier: 'gateway.networking.k8s.io|Gateway|default|gateway'
-    config.kubernetes.io/local-config: "true"
 spec:
   gatewayClassName: istio
   listeners:
   - allowedRoutes:
       namespaces:
         from: All
-    hostname: "foo.demo.treactor.io"
+    hostname: "treactor.example.com"
     name: default
     port: 80
     protocol: HTTP
