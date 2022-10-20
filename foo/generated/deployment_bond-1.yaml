@@ -2,7 +2,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: atom-c
+  name: bond-1
   namespace: foo
   annotations:
     config.kubernetes.io/managed-by: fn:gen:gcr.io/treactor/kpt-fn/create-atoms
@@ -26,17 +26,17 @@ spec:
         - name: TREACTOR_RANDOM
           value: nothing_secret
         - name: SERVICE_NAME
-          value: atom-c
+          value: bond-1
         - name: TREACTOR_NUMBER
-          value: "6"
+          value: "201"
         - name: TREACTOR_MAX_NUMBER
           value: "8"
         - name: TREACTOR_MAX_BOND
           value: "1"
         - name: TREACTOR_COMPONENT
-          value: c
+          value: bo
         - name: TREACTOR_MODULE
-          value: atom
+          value: bond
         - name: K8S_POD_NAME
           valueFrom:
             fieldRef:
@@ -67,10 +67,10 @@ spec:
           httpGet:
             path: /healthz
             port: http
-      serviceAccountName: atom-c
+      serviceAccountName: bond-1
     metadata:
       labels:
-        app: atom-c
+        app: bond-1
   selector:
     matchLabels:
-      app: atom-c
+      app: bond-1
