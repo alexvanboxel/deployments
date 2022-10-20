@@ -1,0 +1,150 @@
+# Generate by gcr.io/treactor/kpt-fn/gateway-api
+apiVersion: networking.istio.io/v1beta1
+kind: VirtualService
+metadata:
+  name: treactor
+  namespace: foo
+  annotations:
+    config.kubernetes.io/managed-by: fn:gen:gcr.io/treactor/kpt-fn/gateway-api
+spec:
+  gateways:
+  - treactor
+  hosts:
+  - "*"
+  http:
+  - match:
+    - uri:
+        exact: /index.html
+    route:
+    - destination:
+        host: treactor-ui
+        port:
+          number: 80
+  - match:
+    - uri:
+        exact: /robot.txt
+    route:
+    - destination:
+        host: treactor-ui
+        port:
+          number: 80
+  - match:
+    - uri:
+        exact: /
+    route:
+    - destination:
+        host: treactor-ui
+        port:
+          number: 80
+  - match:
+    - uri:
+        prefix: /treact/nodes/299/info
+    route:
+    - destination:
+        host: bond-n
+        port:
+          number: 80
+  - match:
+    - uri:
+        prefix: /treact/nodes/500/info
+    route:
+    - destination:
+        host: treactor-ui
+        port:
+          number: 80
+  - match:
+    - uri:
+        prefix: /treact/nodes/501/info
+    route:
+    - destination:
+        host: treactor-api
+        port:
+          number: 80
+  - match:
+    - uri:
+        prefix: /treact/nodes/1/info
+    route:
+    - destination:
+        host: atom-h
+        port:
+          number: 80
+  - match:
+    - uri:
+        prefix: /treact/nodes/2/info
+    route:
+    - destination:
+        host: atom-he
+        port:
+          number: 80
+  - match:
+    - uri:
+        prefix: /treact/nodes/3/info
+    route:
+    - destination:
+        host: atom-li
+        port:
+          number: 80
+  - match:
+    - uri:
+        prefix: /treact/nodes/4/info
+    route:
+    - destination:
+        host: atom-be
+        port:
+          number: 80
+  - match:
+    - uri:
+        prefix: /treact/nodes/5/info
+    route:
+    - destination:
+        host: atom-b
+        port:
+          number: 80
+  - match:
+    - uri:
+        prefix: /treact/nodes/6/info
+    route:
+    - destination:
+        host: atom-c
+        port:
+          number: 80
+  - match:
+    - uri:
+        prefix: /treact/nodes/7/info
+    route:
+    - destination:
+        host: atom-n
+        port:
+          number: 80
+  - match:
+    - uri:
+        prefix: /treact/nodes/8/info
+    route:
+    - destination:
+        host: atom-o
+        port:
+          number: 80
+  - match:
+    - uri:
+        prefix: /treact/reactions
+    route:
+    - destination:
+        host: treactor-ui
+        port:
+          number: 80
+  - match:
+    - uri:
+        prefix: /treact/info
+    route:
+    - destination:
+        host: treactor-api
+        port:
+          number: 80
+  - match:
+    - uri:
+        prefix: /static
+    route:
+    - destination:
+        host: treactor-ui
+        port:
+          number: 80
