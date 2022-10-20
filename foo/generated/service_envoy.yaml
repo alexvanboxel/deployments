@@ -1,13 +1,14 @@
 # Generate by gcr.io/treactor/kpt-fn/gateway-api
 apiVersion: v1
 kind: Service
-metadata:
+metadata: # kpt-merge: foo/envoy
   labels:
     app: envoy
   name: envoy
   namespace: foo
   annotations:
     config.kubernetes.io/managed-by: fn:gen:gcr.io/treactor/kpt-fn/gateway-api
+    internal.kpt.dev/upstream-identifier: '|Service|foo|envoy'
 spec:
   ports:
   - name: http
