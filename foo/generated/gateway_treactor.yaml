@@ -1,11 +1,12 @@
 # Generate by gcr.io/treactor/kpt-fn/gateway-api
 apiVersion: networking.istio.io/v1beta1
 kind: Gateway
-metadata:
+metadata: # kpt-merge: foo/treactor
   name: treactor
   namespace: foo
   annotations:
     config.kubernetes.io/managed-by: fn:gen:gcr.io/treactor/kpt-fn/gateway-api
+    internal.kpt.dev/upstream-identifier: 'networking.istio.io|Gateway|foo|treactor'
 spec:
   selector:
     app: istio-ingress
@@ -15,4 +16,4 @@ spec:
       name: http
       protocol: HTTP
     hosts:
-    - "foo.demo.treactor.io"
+    - foo.demo.treactor.io
