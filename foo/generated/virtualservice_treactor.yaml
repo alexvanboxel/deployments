@@ -71,6 +71,30 @@ spec:
           number: 80
   - match:
     - uri:
+        prefix: /treact/nodes/10/info
+    route:
+    - destination:
+        host: atom-ne
+        port:
+          number: 80
+  - match:
+    - uri:
+        prefix: /treact/nodes/11/info
+    route:
+    - destination:
+        host: atom-na
+        port:
+          number: 80
+  - match:
+    - uri:
+        prefix: /treact/nodes/12/info
+    route:
+    - destination:
+        host: atom-mg
+        port:
+          number: 80
+  - match:
+    - uri:
         prefix: /treact/nodes/1/info
     route:
     - destination:
@@ -131,6 +155,14 @@ spec:
     route:
     - destination:
         host: atom-o
+        port:
+          number: 80
+  - match:
+    - uri:
+        prefix: /treact/nodes/9/info
+    route:
+    - destination:
+        host: atom-f
         port:
           number: 80
   - match:
