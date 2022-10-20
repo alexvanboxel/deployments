@@ -1,11 +1,12 @@
 # Generate by gcr.io/treactor/kpt-fn/create-atoms
 apiVersion: apps/v1
 kind: Deployment
-metadata:
+metadata: # kpt-merge: foo/atom-he
   name: atom-he
   namespace: foo
   annotations:
     config.kubernetes.io/managed-by: fn:gen:gcr.io/treactor/kpt-fn/create-atoms
+    internal.kpt.dev/upstream-identifier: 'apps|Deployment|foo|atom-he'
 spec:
   template:
     spec:

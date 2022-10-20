@@ -12,23 +12,23 @@ upstream:
   git:
     repo: https://github.com/treactor/treactor-kpt-blueprints.git
     directory: treactor
-    ref: treactor/v7
+    ref: treactor/v8
 upstreamLock:
   type: git
   git:
     repo: https://github.com/treactor/treactor-kpt-blueprints.git
     directory: treactor
-    ref: treactor/v7
-    commit: aaccf2ffa91df51a643d8cbaf6fd3b75e9960a29
+    ref: treactor/v8
+    commit: a8916702034fd1209c9a3a33f262c274e289286f
 info:
   description: Treactor - The Telemetry Reactor
 pipeline:
   mutators:
-  - image: gcr.io/treactor/kpt-fn/create-atoms:v0.11
+  - image: gcr.io/treactor/kpt-fn/create-atoms:v0.12
     configPath: fn_create-atoms.yaml
-  - image: gcr.io/treactor/kpt-fn/gateway-api:v0.11
+  - image: gcr.io/treactor/kpt-fn/gateway-api:v0.12
     configPath: fn_gateway-api.yaml
-  - image: gcr.io/treactor/kpt-fn/ensure-sa:v0.11
-  - image: gcr.io/treactor/kpt-fn/ensure-telemetry:v0.11
+  - image: gcr.io/treactor/kpt-fn/ensure-sa:v0.12
+  - image: gcr.io/treactor/kpt-fn/ensure-telemetry:v0.12
   - image: gcr.io/kpt-fn/set-namespace:v0.4.1
     configPath: package-context.yaml
