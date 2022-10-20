@@ -12,7 +12,7 @@ spec:
   - allowedRoutes:
       namespaces:
         from: All
-    hostname: "treactor.example.com"
+    hostname: "foo.demo.treactor.io"
     name: default
     port: 80
     protocol: HTTP
