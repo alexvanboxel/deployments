@@ -38,6 +38,14 @@ spec:
           number: 80
   - match:
     - uri:
+        prefix: /treact/nodes/201/info
+    route:
+    - destination:
+        host: bond-1
+        port:
+          number: 80
+  - match:
+    - uri:
         prefix: /treact/nodes/299/info
     route:
     - destination:
